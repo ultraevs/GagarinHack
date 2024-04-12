@@ -7,10 +7,9 @@ import PickFile from "../PickFile/PickFile";
 const DropZone = () => {
   const [imgLink, setImgLink] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [currentData, setCurrentData] = useState(null)
 
   const [drag, setDrag] = useState(false);
-
-  const [currentData, setCurrentData] = useState(null)
 
   const uploadImage = (event) => {
     const file = event.target.files[0];
