@@ -2,29 +2,18 @@ import React from "react";
 import styles from "./styles.module.scss";
 import imageIcon from "../../assets/svg/image2.svg"
 
+import { useSelector } from "react-redux"
+
 const Documents = () => {
-  const documentsInfo = [
-    {
-      name: "Паспорт",
-      img: "",
-    },
-    {
-      name: "В/У",
-      img: "",
-    },
-    {
-      name: "ПТС",
-      img: "",
-    },
-    {
-      name: "СТС",
-      img: "",
-    },
-  ];
+
+  const {items } = useSelector((store) => store.files)
+
+  console.log(items)
+
   return (
     <div className={styles.documents}>
       <div className={styles.documents__items}>
-        {documentsInfo.map((item) => (
+        {/* {selectItems?.map((item) => (
           <div key={item.name} className={styles.documents__item}>
             <div>
             <p>{item.name}</p>
@@ -37,7 +26,7 @@ const Documents = () => {
             </div>
 
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
