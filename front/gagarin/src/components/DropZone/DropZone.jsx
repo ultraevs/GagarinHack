@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import profileDocs from "../../assets/svg/profileDocs.svg";
 import axios from "axios";
@@ -11,6 +11,20 @@ const DropZone = () => {
   const [drag, setDrag] = useState(false);
 
   const [currentData, setCurrentData] = useState(null)
+
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [window.innerWidth]);
 
   const uploadImage = (event) => {
     const file = event.target.files[0];
@@ -76,8 +90,7 @@ const DropZone = () => {
               onChange={uploadImage}
             />
             <div className={styles.dropzone__dnd__zone} id="img-view">
-              <p>Переместите файлы в это окно или кликните сюда</p>
-              {/* <p>Загрузить фото</p> */}
+              <p>{width > 480 ? "Переместите файлы в это окно или кликните сюда": "Загрузить фото"}</p>
               <button onClick={() => fileUploaderHandler()}>Отправить</button>
             </div>
           </label>

@@ -1,120 +1,120 @@
-.footer{
-    width: 100%;
-    margin-top: 42px;
+.footer {
+  width: 100%;
+  margin-top: 42px;
+  display: flex;
+  background-color: #1d1d1d;
+  justify-content: center;
 
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+
+  &_info {
+    width: 1088px;
+    margin: 0 auto;
     display: flex;
-    background-color: #1D1D1D;
+    padding: 62px 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
-    justify-content: center;
-    
-
-
-    &_info{
-        width: 1440px;
-        display: flex;
-        padding: 62px 0;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+    @media (max-width: 480px) {
+      width: 90%;
+      flex-direction: column;
+      align-items: start;
     }
+  }
 
-    &_logo {
-        cursor: pointer;
-        margin-bottom: 16px;
-      }
-    
-    &_left p:nth-child(2) {
-        color: #FFF;
-        font-family: 'Inter', sans-serif;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 26px; 
-    }
+  &_logo {
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
 
-    &_left p:nth-child(3){
-        color: #414141;
-        font-family: 'Inter', sans-serif;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 16px;
-    }
+  &_left p:nth-child(2) {
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+  }
 
-    &_center {
-        display: flex;
-        flex-direction: column;
-        gap: 20px
-    }
+  &_left p:nth-child(3) {
+    color: #414141;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+  }
 
-    &_center_block{
-        display: flex;
-        gap: 12px;
-    }
+  &_center {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-    &_center_block_chat{
-        color: #FFF;
-        font-family: 'Inter', sans-serif;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 28px;  
-    }
-    &_center_block_a{
-        color: #FF7250;
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 20px;  
+  &_center_block {
+    display: flex;
+    gap: 12px;
+  }
 
-        text-decoration: none;
-    }
+  &_center_block_chat {
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+  }
+  &_center_block_a {
+    color: #ff7250;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
 
-    &_center_block_p_time{
-        color: #414141;
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px; 
-    }
+    text-decoration: none;
+  }
 
-    &_right{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+  &_center_block_p_time {
+    color: #414141;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
 
-    &_right_p{
-        color: #414141;
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 20px; 
-        text-decoration-line: underline;
-    }
+  &_right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
+  &_right_p {
+    color: #414141;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    text-decoration-line: underline;
+  }
 }
 
-@media (max-width:480px) {
-    .footer{
-        flex-direction: column;
+@media (max-width: 480px) {
+  .footer {
 
-        &_info{
-            width: 100%;
-            flex-direction: column;
-            align-items: start;
-        }
-
-        &_left p{
-            display: none;
-        }
-
-        &_right{
-            margin-top: 16px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);        }
+    &_left p {
+      display: none;
     }
+
+    &_right {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }

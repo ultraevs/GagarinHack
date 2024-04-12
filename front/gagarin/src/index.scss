@@ -12,8 +12,12 @@ body {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1088px;
   margin: 0 auto;
+
+  @media (max-width: 480px) {
+    max-width: 90%;
+  }
 }
 
 .title {
