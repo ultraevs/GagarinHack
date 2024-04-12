@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+#  frontend:
+#    build:
+#      context: ../frontend/
+#      dockerfile: Dockerfile
+#    ports:
+#      - "5176:5176"
+  go-backend:
+    build:
+      context: ../go-backend/
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - DOCKER_MODE=1
+    ports:
+      - "8085:8085"
+    network_mode: host
+  python-backend:
+    build:
+      context: ../python-backend/
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - DOCKER_MODE=1
+    ports:
+      - "8000:8000"
+    network_mode: host
+    
