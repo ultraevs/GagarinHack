@@ -1,0 +1,13 @@
+train: C:/Users/Sehap/Documents/code/GagarinHack-2/python-backend/cv/training/text_finder/train/images
+val: C:/Users/Sehap/Documents/code/GagarinHack-2/python-backend/cv/training/text_finder/valid/images
+test: C:/Users/Sehap/Documents/code/GagarinHack-2/python-backend/cv/training/text_finder/test/images
+
+nc: 1
+names: ['text']
+
+roboflow:
+  workspace: main-uu2xy
+  project: doc_texts_
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/main-uu2xy/doc_texts_/dataset/1

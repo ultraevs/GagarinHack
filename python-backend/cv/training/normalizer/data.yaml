@@ -1,0 +1,13 @@
+train: C:/Users/Sehap/Documents/code/GagarinHack-2/cv/train/normalizer/train/images
+val: C:/Users/Sehap/Documents/code/GagarinHack-2/cv/train/normalizer/valid/images
+test: C:/Users/Sehap/Documents/code/GagarinHack-2/cv/train/normalizer/test/images
+
+nc: 1
+names: ['doc-segmented']
+
+roboflow:
+  workspace: main-uu2xy
+  project: docs-seg-1
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/main-uu2xy/docs-seg-1/dataset/1

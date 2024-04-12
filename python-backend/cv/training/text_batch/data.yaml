@@ -1,0 +1,13 @@
+train: C:/Users/Sehap/Documents/code/gagrin/GagarinHack/python-backend/cv/training/text_batch/train/images
+val: C:/Users/Sehap/Documents/code/gagrin/GagarinHack/python-backend/cv/training/text_batch/valid/images
+test: C:/Users/Sehap/Documents/code/gagrin/GagarinHack/python-backend/cv/training/text_batch/test/images
+
+nc: 1
+names: ['form']
+
+roboflow:
+  workspace: main-uu2xy
+  project: doc-form
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/main-uu2xy/doc-form/dataset/2
