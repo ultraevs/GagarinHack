@@ -25,7 +25,7 @@ const Documents = () => {
     <div className={styles.documents}>
       <div className={styles.documents__items}>
         {documentsInfo.map((item) => (
-          <div className={styles.documents__item}>
+          <div key={item.name} className={styles.documents__item}>
             <div>
             <p>{item.name}</p>
             <div className={styles.documents__item__img}>

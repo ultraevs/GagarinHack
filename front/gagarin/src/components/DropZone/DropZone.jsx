@@ -10,6 +10,8 @@ const DropZone = () => {
 
   const [drag, setDrag] = useState(false);
 
+  const [currentData, setCurrentData] = useState(null)
+
   const uploadImage = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
@@ -42,11 +44,15 @@ const DropZone = () => {
       .then((response) => {
         console.log("File uploaded successfully!");
         console.log("Response: " + response.data);
+
+        setCurrentData(response.data)
       })
       .catch((error) => {
         console.error("An error occurred while uploading the file: " + error);
       });
   };
+
+  console.log(currentData)
 
   return (
     <div className={styles.dropzone}>
