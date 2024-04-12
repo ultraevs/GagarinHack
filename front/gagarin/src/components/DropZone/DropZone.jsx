@@ -7,9 +7,10 @@ import PickFile from "../PickFile/PickFile";
 const DropZone = () => {
   const [imgLink, setImgLink] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
-  const [currentData, setCurrentData] = useState(null)
 
   const [drag, setDrag] = useState(false);
+
+  const [currentData, setCurrentData] = useState(null)
 
   const uploadImage = (event) => {
     const file = event.target.files[0];
@@ -76,6 +77,7 @@ const DropZone = () => {
             />
             <div className={styles.dropzone__dnd__zone} id="img-view">
               <p>Переместите файлы в это окно или кликните сюда</p>
+              {/* <p>Загрузить фото</p> */}
               <button onClick={() => fileUploaderHandler()}>Отправить</button>
             </div>
           </label>
