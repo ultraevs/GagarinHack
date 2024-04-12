@@ -1,0 +1,51 @@
+.header {
+  margin-top: 26.5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    cursor: pointer;
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 44px;
+
+      li {
+        cursor: pointer;
+        color: #121212;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__link {
+    cursor: pointer;
+    display: flex;
+    width: 40px;
+    height: 36px;
+    padding: 6px 8px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 7px;
+    background: #dce1e7;
+  }
+}
