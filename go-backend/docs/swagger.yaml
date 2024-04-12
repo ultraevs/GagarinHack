@@ -1,0 +1,81 @@
+definitions:
+  model.CodeResponse:
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    type: object
+  model.History:
+    properties:
+      count:
+        type: string
+      date:
+        type: string
+      recognize:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: prom.shmyaks.ru API
+  title: PromEngineering Service API
+  version: "1.0"
+paths:
+  /v1/gethistorylist:
+    get:
+      description: Return User's detection history
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+      summary: Get User History
+      tags:
+      - History
+  /v1/putfile:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Put files from user to recognize
+      parameters:
+      - collectionFormat: multi
+        description: Files to upload
+        in: formData
+        items:
+          type: file
+        name: files
+        required: true
+        type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+      summary: Put Files From User
+      tags:
+      - Files
+  /v1/puthistorylist:
+    post:
+      description: Put new item in User's history
+      parameters:
+      - description: Запрос на создание новой записи в истории пользователя
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.History'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.CodeResponse'
+      summary: Update User History
+      tags:
+      - History
+swagger: "2.0"
