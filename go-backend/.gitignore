@@ -21,7 +21,7 @@
 # Go workspace file
 go.work
 
-app
+
 app.exe
 main
 main.exe
