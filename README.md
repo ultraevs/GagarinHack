@@ -18,10 +18,17 @@
 
 - Загрузка одного/нескольких документов.
 - История распознаваний для каждого пользователя
-  
+
 ## Запуск решения
 ```sh
-    cd deployment
+    git clone https://github.com/tesseract-ocr/tesseract.git
+    cd tesseract
+    ./autogen.sh
+    ./configure --prefix=/путь к GagarinHack/GagarinHack/python-backend/
+    make
+    sudo make install
+
+    cd GagarinHack/deployment
     docker-compose build
     docker-compose up -d
 ```
