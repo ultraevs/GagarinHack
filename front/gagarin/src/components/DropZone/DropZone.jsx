@@ -53,7 +53,6 @@ const DropZone = () => {
       <div className={styles.dropzone__text}>
         <h3>Документы</h3>
         <p>Загрузите фото документов для упрощенного оформления страховки</p>
-        <p>Введите номер автомобиля</p>
         <div
           style={{ border: drag ? "3px dashed black" : "" }}
           className={styles.dropzone__text__dnd}

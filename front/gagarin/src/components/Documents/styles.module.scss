@@ -21,15 +21,21 @@
     background: #dce1e7;
 
     p {
+      margin-bottom: 13px;
       color: #121212;
       font-size: 24px;
       font-weight: 600;
       line-height: 32px;
     }
 
-    img {
+    &__img {
       width: 126px;
       height: 126px;
+      background: #fff;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     button {

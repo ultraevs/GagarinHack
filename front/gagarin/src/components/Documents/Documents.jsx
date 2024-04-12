@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import imageIcon from "../../assets/png/image.png"
+import imageIcon from "../../assets/svg/image2.svg"
 
 const Documents = () => {
   const documentsInfo = [
@@ -28,7 +28,7 @@ const Documents = () => {
           <div className={styles.documents__item}>
             <div>
             <p>{item.name}</p>
-            <div>
+            <div className={styles.documents__item__img}>
                 <img src={item.img !== "" ? item.img : imageIcon} alt="img" />
             </div>
             </div>
