@@ -4,3 +4,4 @@ venv
 uploaded_images
 tezzeract
 cv/training/
+.env

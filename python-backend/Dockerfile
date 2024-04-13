@@ -5,7 +5,7 @@ COPY requirements.txt ./
 RUN apt update -y
 RUN apt upgrade -y
 #COPY tesseract/ ./python-backend/
-RUN pip install fastapi uvicorn ultralytics tensorflow pydantic python-multipart easyocr starlette
+RUN pip install fastapi uvicorn ultralytics tensorflow pydantic python-multipart easyocr starlette sqlalchemy psycopg2-binary python-dotenv
 RUN apt-get install ffmpeg libsm6 libxext6 libleptonica-dev  -y
 COPY . .
 RUN mkdir uploaded_images
