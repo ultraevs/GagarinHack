@@ -9,6 +9,7 @@ import { addOrUpdateItem } from "../../state/files/filesSlice";
 const DropZone = () => {
 
   const [imgLink, setImgLink] = useState(null);
+  const [imgName, setImgName] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
 
   const [drag, setDrag] = useState(false);
@@ -30,8 +31,8 @@ const DropZone = () => {
 
   const uploadImage = (event) => {
     const file = event.target.files[0];
-    console.log(file)
     setSelectedFile(file);
+    setImgName(file.name)
     setImgLink(URL.createObjectURL(file));
   };
 
@@ -72,6 +73,7 @@ const DropZone = () => {
       };
 
       reader.readAsDataURL(selectedFile);
+      setImgName(null)
       setImgLink(null);
     }
   };
@@ -107,7 +109,7 @@ const DropZone = () => {
             </div>
           </label>
         </div>
-        <PickFile imgLink={imgLink} />
+        <PickFile imgName={imgName} />
       </div>
       <div className={styles.dropzone__img}>
         <img src={profileDocs} alt="documents" />

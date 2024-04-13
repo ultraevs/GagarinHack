@@ -21,8 +21,6 @@ const Documents = () => {
     setSelectedItem(null);
   };
 
-  console.log(selectedItem);
-
   return (
     <div className={styles.documents}>
       <div className={styles.documents__items}>
