@@ -17,7 +17,7 @@ router = APIRouter(tags=["Model"])
 print(os.getcwd())
 normalizer_model = YOLO('cv/models/normalizer.pt')
 classifier_model = tensorflow.keras.models.load_model('cv/models/best_model.keras')
-text_model = YOLO('/cv/models/best.pt')
+text_model = YOLO('cv/models/best.pt')
 reader = easyocr.Reader(['ru'])
 
 # Mодель Pydantic для ожидаемых данных.
