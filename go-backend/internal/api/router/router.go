@@ -1,7 +1,6 @@
 package router
 
 import (
-	"app/internal/api/middleware"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
@@ -25,7 +24,6 @@ func (router *Router) Run(port string) error {
 
 func (router *Router) Setup() {
 	gin.SetMode(gin.DebugMode)
-	router.engine.Use(middleware.CookieMiddleware())
 	_, currentFilePath, _, _ := runtime.Caller(1)
 	templatesPath := filepath.Join(filepath.Dir(currentFilePath), "../../../templates")
 	router.engine.LoadHTMLGlob(filepath.Join(templatesPath, "*.html"))

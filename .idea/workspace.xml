@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6e1e59b3-f78e-4265-b7cd-117d562e4995" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/go-backend/internal/api/controller/HistoryControllers.go" beforeDir="false" afterPath="$PROJECT_DIR$/go-backend/internal/api/controller/HistoryControllers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-backend/internal/api/controller/MainControllers.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-backend/internal/api/middleware/CookieMiddkeware.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-backend/internal/api/router/MainRouter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-backend/internal/api/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/go-backend/internal/api/router/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-backend/internal/database/postgresql.go" beforeDir="false" afterPath="$PROJECT_DIR$/go-backend/internal/database/postgresql.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="go-backend" />
+                    <option name="lastUsedInstant" value="1713031694" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1713029268" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="deployment" />
+                    <option name="lastUsedInstant" value="1713023322" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="frontend" />
+                    <option name="lastUsedInstant" value="1713023135" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="python-backend" />
+                    <option name="lastUsedInstant" value="1713004979" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2f3F5jSQWmO6s6kdXy4NT0m0Df2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "go-backend",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/Users/User",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\projects\GagarinHack\front\gagarin" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-2946fb9b3188-155fe4b6e3a0-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.14808.20" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e1e59b3-f78e-4265-b7cd-117d562e4995" name="Changes" comment="" />
+      <created>1713021676034</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713021676034</updated>
+      <workItem from="1713021678735" duration="1085000" />
+      <workItem from="1713029216082" duration="747000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
