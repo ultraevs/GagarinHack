@@ -1,12 +1,12 @@
 version: "3.3"
 
 services:
-#  frontend:
-#    build:
-#      context: ../frontend/
-#      dockerfile: Dockerfile
-#    ports:
-#      - "5176:5176"
+  frontend:
+    build:
+      context: ../front/gagarin/
+      dockerfile: Dockerfile
+    ports:
+      - "5176:5176"
   go-backend:
     build:
       context: ../go-backend/
