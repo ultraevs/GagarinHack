@@ -3,14 +3,16 @@ import styles from "./styles.module.scss";
 import profileDocs from "../../assets/svg/profileDocs.svg";
 import axios from "axios";
 import PickFile from "../PickFile/PickFile";
+import { AppDispatch } from "../../state/store";
+import { addOrUpdateItem } from "../../state/files/filesSlice";
 
 const DropZone = () => {
+
   const [imgLink, setImgLink] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
 
   const [drag, setDrag] = useState(false);
-
-  const [currentData, setCurrentData] = useState(null)
+  const [currentData, setCurrentData] = useState(null);
 
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -19,17 +21,18 @@ const DropZone = () => {
       setWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [window.innerWidth]);
 
   const uploadImage = (event) => {
     const file = event.target.files[0];
+    console.log(file)
     setSelectedFile(file);
-    setImgLink(file.name);
+    setImgLink(URL.createObjectURL(file));
   };
 
   const dragStartHandler = (e) => {
@@ -50,23 +53,28 @@ const DropZone = () => {
   };
 
   const fileUploaderHandler = () => {
-    const fd = new FormData();
-    fd.append("file", selectedFile);
+    if (imgLink !== null) {
+      const reader = new FileReader();
 
-    axios
-      .post("https://gagarin.shmyaks.ru/cv/cv", fd)
-      .then((response) => {
-        console.log("File uploaded successfully!");
-        console.log("Response: " + response.data);
+      reader.onload = function (event) {
+        const base64data = event.target.result.split(",")[1];
+        axios
+          .post("https://gagarin.shmyaks.ru/cv/detect", { image: base64data })
+          .then((response) => {
+            console.log("Файл успешно загружен!");
+            console.log("Response: " + response.data);
+            AppDispatch(addOrUpdateItem({img: imgLink, info: response.data}))
+            setCurrentData(response.data);
+          })
+          .catch((error) => {
+            console.error("Произошла ошибка при загрузке файла: " + error);
+          });
+      };
 
-        setCurrentData(response.data)
-      })
-      .catch((error) => {
-        console.error("An error occurred while uploading the file: " + error);
-      });
+      reader.readAsDataURL(selectedFile);
+      setImgLink(null);
+    }
   };
-
-  console.log(currentData)
 
   return (
     <div className={styles.dropzone}>
@@ -90,7 +98,11 @@ const DropZone = () => {
               onChange={uploadImage}
             />
             <div className={styles.dropzone__dnd__zone} id="img-view">
-              <p>{width > 480 ? "Переместите файлы в это окно или кликните сюда": "Загрузить фото"}</p>
+              <p>
+                {width > 480
+                  ? "Переместите файлы в это окно или кликните сюда"
+                  : "Загрузить фото"}
+              </p>
               <button onClick={() => fileUploaderHandler()}>Отправить</button>
             </div>
           </label>
