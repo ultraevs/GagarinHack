@@ -21,12 +21,12 @@ const Documents = () => {
     setSelectedItem(null);
   };
 
-  if ( amount < 1) {
+  if (amount < 1) {
     return (
       <div className={styles.documents}>
         <p>Список документов пуст</p>
       </div>
-    )
+    );
   }
 
   return (
@@ -54,10 +54,18 @@ const Documents = () => {
               <img src={selectedItem.img} alt="" />
             </div>
             <ul>
-              <li>Тип: {nameEncoder(selectedItem.info.type)}</li>
-              <li>Страница: {selectedItem.info.page}</li>
-              <li>Серия: {selectedItem.info.series}</li>
-              <li>Номер: {selectedItem.info.number}</li>
+              {selectedItem.info.type && (
+                <li>Тип: {nameEncoder(selectedItem.info.type)}</li>
+              )}
+              {selectedItem.info.page && (
+                <li>Страница: {selectedItem.info.page}</li>
+              )}
+              {selectedItem.info.series && (
+                <li>Серия: {selectedItem.info.series}</li>
+              )}
+              {selectedItem.info.number && (
+                <li>Номер: {selectedItem.info.number}</li>
+              )}
             </ul>
           </div>
         </Modal>
