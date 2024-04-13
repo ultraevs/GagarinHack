@@ -6,7 +6,7 @@ import PickFile from "../PickFile/PickFile";
 import { AppDispatch } from "../../state/store";
 import { addOrUpdateItem } from "../../state/files/filesSlice";
 
-const DropZone = () => {
+const DropZone = ({setLoading}) => {
 
   const [imgLink, setImgLink] = useState(null);
   const [imgName, setImgName] = useState(null);
@@ -58,6 +58,7 @@ const DropZone = () => {
 
   const fileUploaderHandler = () => {
     if (imgLink !== null) {
+      setLoading(true)
       const reader = new FileReader();
 
       reader.onload = function (event) {
@@ -70,10 +71,12 @@ const DropZone = () => {
             AppDispatch(addOrUpdateItem({img: imgLink, info: response.data}))
             setCurrentData(response.data);
             setErrorMessage(false)
+            setLoading(false)
           })
           .catch((error) => {
             console.error("Произошла ошибка при загрузке файла: " + error);
             setErrorMessage(true)
+            setLoading(false)
           });
       };
 
