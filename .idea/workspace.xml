@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55fbb44c-46d8-4f41-b34a-3087e4463968" name="Changes" comment="" />
+    <list default="true" id="55fbb44c-46d8-4f41-b34a-3087e4463968" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/python-backend/cv/models/best.pt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/python-backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-backend/MainRouters/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/python-backend/MainRouters/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-backend/cv/models/classifier.keras" beforeDir="false" afterPath="$PROJECT_DIR$/python-backend/cv/models/classifier.keras" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python-backend/cv/models/text.pt" beforeDir="false" afterPath="$PROJECT_DIR$/python-backend/cv/models/text.pt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,6 +103,7 @@
       <workItem from="1712955868725" duration="793000" />
       <workItem from="1712961872734" duration="80000" />
       <workItem from="1712996627071" duration="725000" />
+      <workItem from="1712997521149" duration="52000" />
     </task>
     <servers />
   </component>
