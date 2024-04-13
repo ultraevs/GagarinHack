@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import nameEncoder from "../../utils/nameEncoder";
 
 const Documents = () => {
-  const { items } = useSelector((store) => store.files);
+  const { items, amount } = useSelector((store) => store.files);
 
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -20,6 +20,14 @@ const Documents = () => {
     setActive(false);
     setSelectedItem(null);
   };
+
+  if ( amount < 1) {
+    return (
+      <div className={styles.documents}>
+        <p>Список документов пуст</p>
+      </div>
+    )
+  }
 
   return (
     <div className={styles.documents}>
