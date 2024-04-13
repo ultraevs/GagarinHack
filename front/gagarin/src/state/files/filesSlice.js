@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import nameEncoder from "../../utils/nameEncoder";
 
 const initialState = {
   items: [],
@@ -10,20 +11,24 @@ export const filesSlice = createSlice({
   initialState,
   reducers: {
     addOrUpdateItem: (state, action) => {
-      const itemInArray = state.items.some((item) => {
-        return item.img === action.payload.img;
-      });
+      const name = nameEncoder(action.payload.info.type);
 
-      if (!itemInArray) {
-        state.items.push(action.payload.item);
+      const itemIndex = state.items.findIndex((item) => item.name === name);
+
+      if (itemIndex === -1) {
+        state.items.push({ ...action.payload, name: name });
         state.amount = state.items.length;
       } else {
-        state.items.map((item) => {
-          if (item.img === action.payload.img) {
-            item.info = action.payload.info;
-          }
-          return item;
-        });
+        state.items = state.items.map((item, index) => {
+            if (index === itemIndex) {
+              return {
+                ...item,
+                info: action.payload.info,
+                img: action.payload.img,
+              };
+            }
+            return item;
+          });
       }
     },
   },
