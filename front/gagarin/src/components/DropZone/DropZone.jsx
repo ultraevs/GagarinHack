@@ -13,7 +13,6 @@ const DropZone = ({setLoading}) => {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const [drag, setDrag] = useState(false);
-  const [currentData, setCurrentData] = useState(null);
 
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -69,12 +68,14 @@ const DropZone = ({setLoading}) => {
             console.log("Файл успешно загружен!");
             console.log("Response: " + response.data);
             AppDispatch(addOrUpdateItem({img: imgLink, info: response.data}))
-            setCurrentData(response.data);
             setErrorMessage(false)
             setLoading(false)
           })
           .catch((error) => {
             console.error("Произошла ошибка при загрузке файла: " + error);
+            if (error.response.status === 429){
+              window.alert("Слишком много запросов, пожалуйста, попробуйте позже");
+            }
             setErrorMessage(true)
             setLoading(false)
           });
