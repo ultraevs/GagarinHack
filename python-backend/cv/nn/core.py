@@ -72,14 +72,24 @@ def main(doc, normalizer_model, classifier_model, text_model, debugging, reader,
     for res in res__:
         res__.append(process_string(res))
 
-    # read data
+   # read data
     res_ = read(rotated_image, text_model, reader)
+    res__ = []
+    for res in res_:
+        pattern = r'[^a-zA-Zа-яА-Я0-9]+'
+        cleaned_res = re.sub(pattern, '', res)
+
+        letters_count = sum(c.isalpha() for c in cleaned_res)
+        if letters_count == 1:
+            res__.append(''.join(filter(str.isdigit, cleaned_res)))
+        else:
+            res__.append(cleaned_res)
     
+    res_ = max(res__, key=len)
+
     try:
-        series_, number_ = res_[0].replace(' ', '')[:4], res_[0].replace(' ', '')[4:]
+        series_, number_ = res_[:4], res_[4:]
     except IndexError: return {'error': 'failed to find serial or number on document'}
-#    series_ = re.sub("[^0-9]", "", series_)
-#    number_ = re.sub("[^0-9]", "", number_)
 
     end_time = time.time()
     elapsed_time = (end_time - start_time) * 1000
