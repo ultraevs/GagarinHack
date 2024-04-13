@@ -1,5 +1,5 @@
 # GagarinHack
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)![Golang](https://img.shields.io/badge/go-%23007ACC.svg?style=for-the-badge&logo=go&logoColor=white)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![TensorFlow](https://img.shields.io/badge/tensorflow-%23007ACC.svg?style=for-the-badge&logo=tensorflow)<img src="https://raw.githubusercontent.com/ultralytics/assets/main/logo/Ultralytics_Logotype_Reverse.svg" width="150" height="auto" style="filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(188deg) brightness(94%) contrast(88%);">
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)![Golang](https://img.shields.io/badge/go-%23007ACC.svg?style=for-the-badge&logo=go&logoColor=white)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![TensorFlow](https://img.shields.io/badge/tensorflow-%23007ACC.svg?style=for-the-badge&logo=tensorflow)![Figma](https://img.shields.io/badge/figma-%2320232a.svg?style=for-the-badge&logo=figma)<img src="https://raw.githubusercontent.com/ultralytics/assets/main/logo/Ultralytics_Logotype_Reverse.svg" width="150" height="auto" style="filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(188deg) brightness(94%) contrast(88%);">
 
 
 
@@ -16,12 +16,57 @@
 
 ## Функционал решения
 
-- Загрузка одного/нескольких документов.
-- История распознаваний для каждого пользователя
-  
+- Загрузка документа.
+- Распознавание серии и номера документа, а также его типа.
+
+## Как работает решение
+
+1. API принимает изображение в формате base64, декодирует его и передает в модель.
+2. Нормализация изображения:
+   
+   Используя результаты модели, производится определение координат углов документа.
+   После этого происходит аппроксимация контура документа до четырех углов.
+   На основе угловых точек определяются границы изображения.
+   Выполняется перспективное преобразование (выпрямление) изображения с учетом определенных границ.
+3. Классификация типа документа:
+
+    Проводится классификация изображения с использованием предварительно обученной модели TensorFlow/Keras.
+    Модель определяет тип документа на основе содержимого изображения.
+4. Чтение текста с изображения:
+
+    С помощью модели обнаружения текста определяются области с текстом на изображении.
+    Каждая область текста обрезается и передается в модель для извлечения фактического текста.
+    Полученные текстовые данные агрегируются и предоставляются как результат обработки.
+5. Модель возвращает результат в формате json, который выводиться на фронтенд.
+
+
+## График Точности Обучения модели классификации
+
+![График Точности Обучения](images/image_2024-04-12_15-14-53.png)
+
+Этот график отображает улучшение точности нашей модели с каждой эпохой обучения. Две кривые представляют тренировочную (синий цвет) и валидационную (красный цвет) точность. Мы видим, что модель демонстрирует стабильное улучшение точности на протяжении первых эпох, после чего достигает плато, что указывает на то, что модель достигла своей оптимальной способности к обобщению на предоставленных данных. Точность на валидационных данных остается высокой во всем диапазоне обучения, что свидетельствует о хорошей обобщающей способности и предотвращении переобучения.
+
+## Результаты тренировки модели поиска текста
+
+В процессе разработки нашего решения мы внимательно отслеживали различные аспекты производительности модели. Ниже представлены графики, иллюстрирующие эффективность модели во время тренировочного и валидационного процесса:
+
+![График Модели Текста](images/image_2024-04-13_13-30-44.png)
+
+### Объяснение графиков:
+
+- **train/box_loss и val/box_loss**: Эти графики показывают потери, связанные с ограничивающими рамками (bounding boxes), на тренировочных и валидационных данных соответственно. Уменьшение значений потерь указывает на улучшение способности модели правильно определять положение объектов.
+
+- **train/cls_loss и val/cls_loss**: Здесь отображены потери классификации на тренировочных и валидационных данных. Снижение этих значений свидетельствует о том, что модель лучше распознает и классифицирует различные типы документов.
+
+- **train/df1_loss и val/df1_loss**: Эти графики могут представлять дополнительные метрики качества модели, такие как F1-мера, демонстрирующие улучшение производительности модели во время тренировок и валидации.
+
+- **metrics/precision(B) и metrics/recall(B)**: Показывают точность и полноту модели на валидационном наборе данных, соответственно. Высокие и стабильные значения указывают на надежность модели в обнаружении и правильном классифицировании документов.
+
+- **metrics/mAP50(B) и metrics/mAP50-95(B)**: Эти графики показывают среднюю точность модели (mAP) при пороге IoU=0.5 и среднюю точность при порогах IoU от 0.5 до 0.95. Высокие значения mAP по всем классам подтверждают высокую надежность модели при различных уровнях строгости.
+
 ## Запуск решения
 ```sh
-    cd deployment
+    cd GagarinHack/deployment
     docker-compose build
     docker-compose up -d
 ```

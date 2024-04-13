@@ -1,0 +1,195 @@
+.element-main {
+    background-color: #f7f7ff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.element-main .div {
+    background-color: var(--designbackground);
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+}
+
+.element-main .header {
+    display: flex;
+    width: 1440px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 110px;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    background-color: transparent;
+}
+
+.element-main .text-wrapper {
+    position: relative;
+    width: fit-content;
+    font-family: var(--h-3-font-family);
+    font-weight: var(--h-3-font-weight);
+    color: #000000;
+    font-size: var(--h-3-font-size);
+    letter-spacing: var(--h-3-letter-spacing);
+    line-height: var(--h-3-line-height);
+    font-style: var(--h-3-font-style);
+}
+
+.element-main .buttons {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.element-main .button {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 16px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--buttonsblue);
+    border-radius: 4px;
+}
+
+.element-main .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--label-font-family);
+    font-weight: var(--label-font-weight);
+    color: #ffffff;
+    font-size: var(--label-font-size);
+    letter-spacing: var(--label-letter-spacing);
+    line-height: var(--label-line-height);
+    white-space: nowrap;
+    font-style: var(--label-font-style);
+}
+
+.element-main .div-wrapper {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--designbackground);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.element-main .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--label-font-family);
+    font-weight: var(--label-font-weight);
+    color: var(--textblack);
+    font-size: var(--label-font-size);
+    letter-spacing: var(--label-letter-spacing);
+    line-height: var(--label-line-height);
+    white-space: nowrap;
+    font-style: var(--label-font-style);
+}
+
+.element-main .load-window {
+    position: absolute;
+    width: 602px;
+    height: 395px;
+    top: 134px;
+    left: 109px;
+}
+
+.element-main .view-window {
+    position: absolute;
+    width: 602px;
+    height: 395px;
+    top: 134px;
+    left: 729px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: #f2f2f2;
+}
+
+.element-main .p {
+    width: 393px;
+    top: 605px;
+    left: 110px;
+    font-family: var(--p-font-family);
+    font-weight: var(--p-font-weight);
+    position: absolute;
+    color: #000000;
+    font-size: var(--p-font-size);
+    letter-spacing: var(--p-letter-spacing);
+    line-height: var(--p-line-height);
+    font-style: var(--p-font-style);
+}
+
+.element-main .button-2 {
+    all: unset;
+    box-sizing: border-box;
+    position: absolute;
+    top: 718px;
+    left: 366px;
+    background-color: var(--buttonsblue);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.element-main .arrows {
+    position: absolute;
+    width: 164px;
+    height: 32px;
+    top: 542px;
+    left: 948px;
+}
+
+.element-main .img {
+    position: absolute;
+    width: 164px;
+    height: 32px;
+    top: 542px;
+    left: 329px;
+}
+
+.element-main .text-wrapper-4 {
+    top: 605px;
+    left: 730px;
+    font-family: var(--p-medium-font-family);
+    font-weight: var(--p-medium-font-weight);
+    white-space: nowrap;
+    position: absolute;
+    color: #000000;
+    font-size: var(--p-medium-font-size);
+    letter-spacing: var(--p-medium-letter-spacing);
+    line-height: var(--p-medium-line-height);
+    font-style: var(--p-medium-font-style);
+}
+
+.element-main .text-wrapper-5 {
+    top: 633px;
+    left: 730px;
+    font-family: var(--p-medium-font-family);
+    font-weight: var(--p-medium-font-weight);
+    white-space: nowrap;
+    position: absolute;
+    color: #000000;
+    font-size: var(--p-medium-font-size);
+    letter-spacing: var(--p-medium-letter-spacing);
+    line-height: var(--p-medium-line-height);
+    font-style: var(--p-medium-font-style);
+}
