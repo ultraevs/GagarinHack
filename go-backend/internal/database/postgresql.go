@@ -36,10 +36,9 @@ func ConnectDatabase() {
 	createTablesQuery := `
 	CREATE TABLE IF NOT EXISTS gagarin_history (
 		id SERIAL PRIMARY KEY,
-		token VARCHAR(255) NOT NULL,
 	    date VARCHAR(255) NOT NULL,
-	    count VARCHAR(255) NOT NULL,
-	    recognize VARCHAR(255) NOT NULL
+	    type VARCHAR(255) NOT NULL,
+	    status VARCHAR(255) NOT NULL
 	)
 	`
 	_, err = Db.Exec(createTablesQuery)
