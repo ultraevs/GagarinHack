@@ -1,0 +1,124 @@
+.dropzone {
+  height: 290px;
+  border-radius: 24px;
+  background: #dce1e7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  &__text {
+    padding: 24px 0px 24px 32px;
+    color: #121212;
+
+    @media (max-width: 480px) {
+      padding: 16px 24px 32px 16px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+    }
+
+    p {
+      margin-bottom: 66px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+
+      @media (max-width: 480px) {
+        margin-bottom: 16px;
+      }
+    }
+
+    p {
+      &:nth-of-type(1) {
+        width: 307px;
+
+        @media (max-width: 480px) {
+          width: 70%;
+        }
+      }
+
+      &:nth-of-type(2) {
+        margin-bottom: 14.5px;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 28px;
+      }
+    }
+  }
+
+  &__img {
+    @media (max-width: 480px) {
+      display: none;
+    };
+  }
+
+  &__dnd {
+    border-radius: 12px;
+    padding: 18px;
+    overflow: hidden;
+
+    &__zone {
+      display: inline-flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 45.96px;
+      width: 486px;
+      height: 68px;
+      border-radius: 12px;
+      border: 1px solid #dce1e7;
+      background: #fff;
+      box-shadow: 0px 0px 10px 0px rgba(18, 18, 18, 0.1);
+
+      @media (max-width: 480px) {
+        width: 100%;
+        height: auto;
+      }
+
+      p {
+        margin: 17px 0 17px 18px;
+        width: 185px !important;
+        color: #121212;
+        font-weight: 600;
+        line-height: 20px;
+        opacity: 0.4;
+      }
+
+      button {
+        cursor: pointer;
+        margin: 4px 4px 4px 0px;
+        display: flex;
+        width: 234px;
+        height: 60px;
+        padding: 16px 57px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        background: #ff7250;
+        box-shadow: 0px 4px 24px 0px rgba(255, 114, 80, 0.5);
+        border: none;
+        outline: none;
+        color: #fff;
+        text-align: center;
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+
+        @media (max-width: 480px) {
+          width: 50%;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
