@@ -42,6 +42,7 @@ async def detect_image(data: ImageData):
         normalizer_model=normalizer_model,
         classifier_model=classifier_model,
         batch_model=batch_model,
+        debugging=False,
         export_showcase=True,
         launch_type="linux"
     )
