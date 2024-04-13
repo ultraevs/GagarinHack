@@ -77,7 +77,7 @@ def main(doc, normalizer_model, classifier_model, text_model, debugging, reader,
     
     try:
         series_, number_ = res_[0].replace(' ', '')[:4], res_[0].replace(' ', '')[4:]
-    except IndexError: return {'_': 'failed to find serial or number on document'}
+    except IndexError: return {'error': 'failed to find serial or number on document'}
 #    series_ = re.sub("[^0-9]", "", series_)
 #    number_ = re.sub("[^0-9]", "", number_)
 

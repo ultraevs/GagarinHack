@@ -49,6 +49,9 @@ async def detect_image(data: ImageData):
         reader=reader,
         launch_type="linux"
     )
-
-    print(result)
-    return JSONResponse(status_code=200, content=result)
+    try:
+        temp = result["error"]
+        return JSONResponse(content=temp, status_code=400)
+    except KeyError:
+        print(result)
+        return JSONResponse(status_code=200, content=result)
