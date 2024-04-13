@@ -11,7 +11,7 @@ export const filesSlice = createSlice({
   initialState,
   reducers: {
     addOrUpdateItem: (state, action) => {
-      const name = nameEncoder(action.payload.info.type);
+      const name = nameEncoder(action.payload.info.type, action.payload.info.page_number);
 
       const itemIndex = state.items.findIndex((item) => item.name === name);
 

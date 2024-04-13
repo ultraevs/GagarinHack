@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Modal from "../Modal/Modal";
 import { useSelector } from "react-redux";
 import nameEncoder from "../../utils/nameEncoder";
+import close from "../../assets/svg/close.svg"
 
 const Documents = () => {
   const { items, amount } = useSelector((store) => store.files);
@@ -49,16 +50,20 @@ const Documents = () => {
       {active && selectedItem && (
         <Modal active={active} func={closeModal}>
           <div className={styles.modal}>
-            <h1 className={styles.modal__title}>{selectedItem.name}</h1>
+            <div className={styles.modal__title}>
+              <h1>{selectedItem.name}</h1>
+              <button onClick={closeModal}><img src={close} alt="" /></button>
+            </div>
+            
             <div className={styles.modal__img}>
               <img src={selectedItem.img} alt="" />
             </div>
             <ul>
               {selectedItem.info.type && (
-                <li>Тип: {nameEncoder(selectedItem.info.type)}</li>
+                <li>Тип: {nameEncoder(selectedItem.info.type, selectedItem.info.page_number).split(" ")[0]}</li>
               )}
-              {selectedItem.info.page && (
-                <li>Страница: {selectedItem.info.page}</li>
+              {selectedItem.info.page_number >= 0 && (
+                <li>Страница: {selectedItem.info.page_number}</li>
               )}
               {selectedItem.info.series && (
                 <li>Серия: {selectedItem.info.series}</li>
