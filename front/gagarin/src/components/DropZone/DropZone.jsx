@@ -17,6 +17,8 @@ const DropZone = () => {
 
   const [width, setWidth] = useState(window.innerWidth);
 
+  const [errorMessage, setErrorMessage] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -34,6 +36,7 @@ const DropZone = () => {
     setSelectedFile(file);
     setImgName(file.name)
     setImgLink(URL.createObjectURL(file));
+    setErrorMessage(false)
   };
 
   const dragStartHandler = (e) => {
@@ -66,9 +69,11 @@ const DropZone = () => {
             console.log("Response: " + response.data);
             AppDispatch(addOrUpdateItem({img: imgLink, info: response.data}))
             setCurrentData(response.data);
+            setErrorMessage(false)
           })
           .catch((error) => {
             console.error("Произошла ошибка при загрузке файла: " + error);
+            setErrorMessage(true)
           });
       };
 
@@ -109,7 +114,7 @@ const DropZone = () => {
             </div>
           </label>
         </div>
-        <PickFile imgName={imgName} />
+        <PickFile imgName={imgName} error={errorMessage} />
       </div>
       <div className={styles.dropzone__img}>
         <img src={profileDocs} alt="documents" />
