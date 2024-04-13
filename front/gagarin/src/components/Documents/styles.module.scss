@@ -87,8 +87,23 @@
   flex-direction: column;
   gap: 10px;
   
+  ul{
+    list-style-type: none;
+  }
+  
   &__title {
-    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+    h1{
+      font-size: 20px;
+    }
+
+    button{
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
   }
   &__img {
     width: 100%;
